@@ -1,17 +1,8 @@
-import 'dart:async';
-import 'dart:convert';
+
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 
-Future<User> fetchAlbum() async {
-  final response = await http.get(Uri.parse('http://10.0.2.2:8000/api/login'));
 
-  if (response.statusCode == 200) {
-    return User.fromJson(jsonDecode(response.body));
-  } else {
-    throw Exception('Failed to load user');
-  }
-}
+
 
 class User {
   final int id;
