@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_shop/generated_plugin_registrant.dart';
-import 'package:flutter_shop/listScreen.dart';
-import 'package:flutter_shop/modules/Auth/login.dart';
-import 'package:flutter_shop/modules/Auth/reginster.dart';
-import 'package:flutter_shop/modules/Cart/cart_page.dart';
-import 'package:flutter_shop/provider/userprovider.dart';
+import 'package:flutter_shop/modules/auth/login.dart';
+import 'package:flutter_shop/provider/auth/loginprovider.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -21,9 +17,9 @@ class MyApp extends StatelessWidget {
         providers: [
           ChangeNotifierProvider(create: (_) => UserProvider()),
         ],
-        child: MaterialApp(
+        child: const MaterialApp(
           title: 'tranducminh',
-          home: LoginScreen(),
+          home: loginScreen(),
         ));
   }
 }

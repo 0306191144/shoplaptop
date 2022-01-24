@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_shop/modules/home/components/body.dart';
-import 'package:flutter_shop/provider/userprovider.dart';
+import 'package:flutter_shop/provider/auth/loginprovider.dart';
 import 'package:flutter_shop/widget/mybutton_widget.dart';
 import 'package:flutter_shop/widget/mytextformfield_widget.dart';
 import 'package:provider/provider.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class loginScreen extends StatefulWidget {
+  const loginScreen({Key? key}) : super(key: key);
 
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  _loginScreenState createState() => _loginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _loginScreenState extends State<loginScreen> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
@@ -76,7 +76,11 @@ class _LoginScreenState extends State<LoginScreen> {
                   const Text('Bạn chưa có tài khoản? '),
                   TextButton(
                     child: const Text('Đăng ký'),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (_) {
+                        return Home_body();
+                      }));
+                    },
                   )
                 ],
               )
