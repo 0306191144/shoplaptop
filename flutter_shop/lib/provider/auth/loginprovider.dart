@@ -5,12 +5,6 @@ import 'dart:convert';
 import 'package:flutter_shop/Model/user.dart';
 
 class UserProvider with ChangeNotifier {
-  /*
- List<User> _user = [];
-  List<User> get user => _user;
-  List<User> _userFromJson(dynamic datas) =>
-      List<User>.from(datas.map((data) => User.fromJson(data)));
-      */
   late User user;
   bool kq1 = false;
   // User get user => _user;
@@ -25,14 +19,14 @@ class UserProvider with ChangeNotifier {
     if (response.statusCode == 200) {
       dynamic object = json.decode(response.body);
       dynamic resutl = object['success'];
-      kq2 = resutl;
-      kq1 = kq2;
+      kq1 = resutl;
       if (kq1 == true) {
         dynamic data = object['user'];
         userLogin = User.fromJson(data);
         user = userLogin;
       }
     } else {
+      // ignore: avoid_print
       print('login faild');
     }
     notifyListeners();

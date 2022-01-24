@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_shop/modules/auth/login.dart';
+import 'package:flutter_shop/modules/auth/reginster.dart';
 import 'package:flutter_shop/provider/auth/loginprovider.dart';
+import 'package:flutter_shop/provider/auth/registerprovider.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -16,10 +18,14 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
         providers: [
           ChangeNotifierProvider(create: (_) => UserProvider()),
+          ChangeNotifierProvider(create: (_) => registerProvider()),
         ],
-        child: const MaterialApp(
-          title: 'tranducminh',
-          home: loginScreen(),
-        ));
+        child: GestureDetector(
+            onTap: () =>
+                WidgetsBinding.instance?.focusManager.primaryFocus?.unfocus(),
+            child: const MaterialApp(
+              title: 'tranducminh',
+              home: loginScreen(),
+            )));
   }
 }

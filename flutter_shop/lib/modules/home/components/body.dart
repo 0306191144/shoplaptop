@@ -57,39 +57,40 @@ class Home_bodyState extends State<Home_body> {
       ),
       bottomNavigationBar: Footer(),
       body: SingleChildScrollView(
+          keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
           child: Column(children: [
-        SizedBox(height: 30),
-        CenterPageLarge(),
-        SizedBox(height: 30),
-        Padding(
-          padding: EdgeInsets.only(right: 250),
-          child: Text('Category',
-              style: TextStyle(
-                fontSize: 20,
-              )),
-        ),
-        Category_home(),
-        SizedBox(height: 30),
-        Padding(
-          padding: EdgeInsets.only(right: 200),
-          child: Text('NewProducts',
-              style: TextStyle(
-                fontSize: 20,
-              )),
-        ),
-        SizedBox(height: 15),
-        LstItemCard(),
-        SizedBox(height: 15),
-        Padding(
-          padding: EdgeInsets.only(right: 200),
-          child: Text('Popular Product',
-              style: TextStyle(
-                fontSize: 20,
-              )),
-        ),
-        SizedBox(height: 15),
-        LstItemCard(),
-      ])),
+            SizedBox(height: 30),
+            CenterPageLarge(),
+            SizedBox(height: 30),
+            Padding(
+              padding: EdgeInsets.only(right: 250),
+              child: Text('Category',
+                  style: TextStyle(
+                    fontSize: 20,
+                  )),
+            ),
+            Category_home(),
+            SizedBox(height: 30),
+            Padding(
+              padding: EdgeInsets.only(right: 200),
+              child: Text('NewProducts',
+                  style: TextStyle(
+                    fontSize: 20,
+                  )),
+            ),
+            SizedBox(height: 15),
+            LstItemCard(),
+            SizedBox(height: 15),
+            Padding(
+              padding: EdgeInsets.only(right: 200),
+              child: Text('Popular Product',
+                  style: TextStyle(
+                    fontSize: 20,
+                  )),
+            ),
+            SizedBox(height: 15),
+            LstItemCard(),
+          ])),
     );
   }
 }

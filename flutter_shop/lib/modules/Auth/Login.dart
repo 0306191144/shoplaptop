@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_shop/modules/auth/reginster.dart';
 import 'package:flutter_shop/modules/home/components/body.dart';
 import 'package:flutter_shop/provider/auth/loginprovider.dart';
 import 'package:flutter_shop/widget/mybutton_widget.dart';
@@ -78,7 +79,7 @@ class _loginScreenState extends State<loginScreen> {
                     child: const Text('Đăng ký'),
                     onPressed: () {
                       Navigator.push(context, MaterialPageRoute(builder: (_) {
-                        return Home_body();
+                        return RegisterScreen();
                       }));
                     },
                   )
