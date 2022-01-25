@@ -5,36 +5,31 @@ import 'dart:convert';
 import 'package:flutter_shop/Model/user.dart';
 
 late User userRegister;
-bool tam = false;
+bool tam = true;
 String mess = '';
 
-// ignore: camel_case_types
 class registerProvider with ChangeNotifier {
-  Future<bool> register(String email, String password, String name,
-      String passwordConfirmation) async {
-    User userRegister;
-    bool dk = false;
+  Future<bool> register(String email, String name, String password,
+      String passwordconfirmation) async {
     final response =
         await http.post(Uri.parse('http://192.168.1.7:8000/api/login'), body: {
       'email': email,
       'password': password,
-      'password_confirmation': passwordConfirmation,
+      'password_confirmation': passwordconfirmation,
       'name': name
     });
+
     if (response.statusCode == 200) {
       dynamic object = json.decode(response.body);
       dynamic resutl = object['success'];
-      dk = resutl;
-      dynamic m = object['message'];
-      mess = m;
-      tam = dk;
+      mess = object['message'];
+      tam = resutl;
       if (tam == true) {
         dynamic data = object['user'];
         userRegister = User.fromJson(data);
-        userRegister = userRegister;
       }
     } else {
-      print('register faild');
+      print('fail');
     }
     notifyListeners();
     return tam;

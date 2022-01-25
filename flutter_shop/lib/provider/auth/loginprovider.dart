@@ -7,7 +7,6 @@ import 'package:flutter_shop/Model/user.dart';
 class UserProvider with ChangeNotifier {
   late User user;
   bool kq1 = false;
-  // User get user => _user;
   Future<bool> login(String email, String password) async {
     User userLogin;
     bool kq2 = false;

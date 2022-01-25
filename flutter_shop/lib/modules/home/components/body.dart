@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_shop/modules/home/components/Category.dart';
-import 'package:flutter_shop/modules/home/components/footer.dart';
+import 'package:flutter_shop/widget/footer.dart';
 import 'package:flutter_shop/modules/home/components/listProduct.dart';
 import 'package:flutter_shop/modules/home/components/sline.dart';
 

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_shop/modules/Auth/Login.dart';
 import 'package:flutter_shop/provider/auth/registerprovider.dart';
-import 'package:flutter_shop/widget/alter.dart';
 import 'package:flutter_shop/widget/mybutton_widget.dart';
 import 'package:flutter_shop/widget/mytextformfield_widget.dart';
 import 'package:provider/provider.dart';
@@ -73,15 +72,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         onPress: () async {
                           await api.register(
                               emailController.text,
-                              passwordController.text,
                               nameController.text,
+                              passwordController.text,
                               passwordComfirmationController.text);
-                          if (tam == false) {
-                            AlertMessage.showMsg(context, mess);
+                          if (tam == true) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                    content: Text('khoản hoặc mật khẩu')));
                           } else {
                             Navigator.push(context,
                                 MaterialPageRoute(builder: (_) {
-                              return loginScreen();
+                              return const loginScreen();
                             }));
                           }
                         },
@@ -95,9 +96,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       children: [
                         const Text('Bạn đã có tài khoản? '),
                         TextButton(
-                          child: const Text('Đăng nhập'),
-                          onPressed: () {},
-                        )
+                            child: const Text('Đăng nhập'),
+                            onPressed: () {
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (_) {
+                                return loginScreen();
+                              }));
+                            })
                       ],
                     )
                   ]),

@@ -11,7 +11,6 @@ class MyButtonWidget extends StatelessWidget {
   final bool isSocial;
   // ignore: prefer_typing_uninitialized_variables
   var icon;
-
   MyButtonWidget({
     Key? key,
     this.width = double.infinity,
