@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_shop/Model/model.dart';
+import 'package:flutter_shop/model/product.dart';
+
 
 class Category_home extends StatelessWidget {
   @override

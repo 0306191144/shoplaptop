@@ -23,7 +23,6 @@ class User {
     this.status,
     this.isadmin,
   );
-
   User.fromJson(Map<String, dynamic> json)
       : id = json['id'],
         name = json['name'],
@@ -35,4 +34,6 @@ class User {
         birthday = json['birthday'],
         status = json['status'],
         isadmin = json['isadmin'];
+
+  
 }

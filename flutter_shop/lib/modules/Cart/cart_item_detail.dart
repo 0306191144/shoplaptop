@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_shop/Model/model.dart';
+import 'package:flutter_shop/model/product.dart';
 
 class CartItemDetail extends StatefulWidget {
   final Product product;
@@ -40,11 +40,11 @@ class _CartItemDetailState extends State<CartItemDetail> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Container(
-          margin: EdgeInsets.only(left: 15),
+          margin: const EdgeInsets.only(left: 15),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
-              Container(
+              SizedBox(
                 height: 80,
                 width: 80,
                 child: Hero(
@@ -52,7 +52,7 @@ class _CartItemDetailState extends State<CartItemDetail> {
                   child: Image.asset(widget.product.image),
                 ),
               ),
-              Text('${widget.product.title}',
+              Text('${widget.product.nameproduct}',
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,

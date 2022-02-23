@@ -30,7 +30,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   @override
   Widget build(BuildContext context) {
-    var api = Provider.of<registerProvider>(context, listen: false);
+    var regis = Provider.of<registerProvider>(context, listen: false);
     return Scaffold(
       body: Consumer<registerProvider>(
         builder: (_, value, child) {
@@ -70,15 +70,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         textStyle: const TextStyle(
                             fontSize: 16.0, color: Colors.white),
                         onPress: () async {
-                          await api.register(
+                          await regis.register(
                               emailController.text,
                               nameController.text,
                               passwordController.text,
                               passwordComfirmationController.text);
-                          if (tam == true) {
+                          if (regis.tam == false) {
                             ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(
-                                    content: Text('khoản hoặc mật khẩu')));
+                                    content: Text('không thể đăng kí')));
                           } else {
                             Navigator.push(context,
                                 MaterialPageRoute(builder: (_) {
@@ -100,7 +100,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             onPressed: () {
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (_) {
-                                return loginScreen();
+                                return const loginScreen();
                               }));
                             })
                       ],

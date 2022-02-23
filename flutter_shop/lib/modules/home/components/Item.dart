@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_shop/Model/model.dart';
+import 'package:flutter_shop/model/product.dart';
 
 class ItemCard extends StatelessWidget {
   final Product product;
@@ -30,7 +30,7 @@ class ItemCard extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 5),
             child: Text(
-              product.title,
+              product.nameproduct,
               style: TextStyle(color: Colors.grey),
             ),
           ),

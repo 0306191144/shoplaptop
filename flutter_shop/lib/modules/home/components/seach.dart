@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_shop/Model/model.dart';
+import 'package:flutter_shop/model/product.dart';
 
 class ItemCard extends StatelessWidget {
   final Product product;
@@ -12,7 +12,7 @@ class ItemCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: [],
+      children: const [],
     );
   }
 }

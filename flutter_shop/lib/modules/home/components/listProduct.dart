@@ -1,16 +1,20 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
-import 'package:flutter_shop/Model/model.dart';
+import 'package:flutter_shop/model/product.dart';
 import 'package:flutter_shop/modules/home/components/Item.dart';
 
 class LstItemCard extends StatefulWidget {
   const LstItemCard({Key? key}) : super(key: key);
+
   @override
-  State<LstItemCard> createState() => LstItemCardState();
+  _LstItemCardState createState() => _LstItemCardState();
 }
 
-class LstItemCardState extends State<LstItemCard> {
+class _LstItemCardState extends State<LstItemCard> {
   @override
   Widget build(BuildContext context) {
+//
+    var products;
     return Wrap(
         spacing: 20,
         direction: Axis.horizontal,

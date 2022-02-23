@@ -16,7 +16,7 @@ class _CartBottomBarState extends State<CartBottomBar> {
           children: <Widget>[
             Container(
                 margin: EdgeInsets.only(right: 20),
-                child: Text(
+                child: const Text(
                   'Total: 80',
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
                 )),
@@ -24,7 +24,7 @@ class _CartBottomBarState extends State<CartBottomBar> {
               width: 120,
               height: 70,
               color: Colors.deepOrange,
-              child: Center(
+              child: const Center(
                   child: Text(
                 'Check Out',
                 style: TextStyle(color: Colors.white, fontSize: 20),

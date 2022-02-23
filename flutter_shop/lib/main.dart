@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
                 WidgetsBinding.instance?.focusManager.primaryFocus?.unfocus(),
             child: const MaterialApp(
               title: 'tranducminh',
-              home: RegisterScreen(),
+              home: loginScreen(),
             )));
   }
 }
